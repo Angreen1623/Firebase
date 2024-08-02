@@ -120,13 +120,12 @@ fun App(db : FirebaseFirestore){
             Arrangement.Center
         ){
             Button(onClick = {
-                val city = hashMapOf(
+                val pessoa = hashMapOf(
                     "nome" to nome,
                     "telefone" to telefone
                 )
 
-                db.collection("clientes").document("PrimeiroCliente")
-                    .set(city)
+                db.collection("clientes").add(pessoa)
                     .addOnSuccessListener { Log.d(ContentValues.TAG, "DocumentSnapshot successfuly written!") }
                     .addOnFailureListener { e -> Log.w(ContentValues.TAG,"Error writing document", e) }
 
