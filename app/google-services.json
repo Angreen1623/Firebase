@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "1007197298972",
+    "project_id": "aula-pamii-f1502",
+    "storage_bucket": "aula-pamii-f1502.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007197298972:android:2180c7732137b1b4011ad9",
+        "android_client_info": {
+          "package_name": "br.com.eteczonaleste"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD2X-dk24OPDyKzIWoeLp5kDFs1Slm_fQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007197298972:android:bbf05825e28ac984011ad9",
+        "android_client_info": {
+          "package_name": "com.company.eteczonaleste"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD2X-dk24OPDyKzIWoeLp5kDFs1Slm_fQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007197298972:android:a8a595895bf92a41011ad9",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD2X-dk24OPDyKzIWoeLp5kDFs1Slm_fQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
