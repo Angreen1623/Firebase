@@ -1,6 +1,7 @@
 package com.example.firebase
 
 import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -93,6 +94,12 @@ fun App(db : FirebaseFirestore){
         Row(
             Modifier
                 .fillMaxWidth()
+                .padding(20.dp)
+        ) {
+        }
+        Row(
+            Modifier
+                .fillMaxWidth()
         ) {
             Column(
                 Modifier
@@ -126,11 +133,53 @@ fun App(db : FirebaseFirestore){
                 )
 
                 db.collection("clientes").add(pessoa)
-                    .addOnSuccessListener { Log.d(ContentValues.TAG, "DocumentSnapshot successfuly written!") }
+                    .addOnSuccessListener { documentReference ->
+                        Log.d(ContentValues.TAG, "DocumentSnapshot successfuly written!") }
                     .addOnFailureListener { e -> Log.w(ContentValues.TAG,"Error writing document", e) }
 
             }) {
                 Text(text = "Cadastrar")
+            }
+        }
+
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(20.dp)
+        ) {
+        }
+
+        Row(
+            Modifier
+                .fillMaxWidth()
+        ){
+            Column(
+                Modifier
+                    .fillMaxWidth(0.3f)
+            ) {
+                Text(text = "Nome:")
+            }
+        }
+
+        Row(
+            Modifier
+                .fillMaxWidth()
+        ) {
+            Column() {
+                db.collection("clientes")
+                    .get()
+                    .addOnSuccessListener { documents ->
+                        for (document in documents){
+                            val lista = hashMapOf(
+                                "nome" to "${document.data.get("nome")}",
+                                "telefone" to "${document.data.get("telefone")}"
+                            )
+                            Log.d(TAG, "${document.id} => ${document.data}")
+                        }
+                    }
+                    .addOnFailureListener{ exception ->
+                        Log.w(TAG, "Error getting documents: ", exception)
+                    }
             }
         }
     }
